@@ -5,7 +5,7 @@ export const buttonIconTextData = [
     id: 0,
     name: 'Dashboard',
     icon: 'dashboard',
-    route: '/dashboard',
+    route: '/',
     active: false,
   },
   {

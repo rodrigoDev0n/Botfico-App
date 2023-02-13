@@ -17,7 +17,7 @@ export const DashboardView = () => {
         width: '100%',
         height: {
           xs: '100%',
-          sm: '95%'
+          sm: '100%'
         },
       }}>
       <Box sx={{
@@ -119,9 +119,9 @@ export const DashboardView = () => {
         },
         width: {
           xs: '100%',
-          sm: '45%'
+          sm: '35%'
         },
-        height: '95%',
+        height: '100%',
         p: 1
       }}>
         <Grid item className="box-shadow animated_view_component-5" sx={{

@@ -1,7 +1,6 @@
 import { ArrowDropDown } from "@mui/icons-material"
 import { Grid, Typography } from "@mui/material"
 import { LineChart } from "../charts/components/LineChart"
-import { PieChart } from "../charts/components/PieChart"
 
 export const Sales = () => {
     return (

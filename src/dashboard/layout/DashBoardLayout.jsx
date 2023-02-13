@@ -7,11 +7,11 @@ const drawerWidth = 270
 export const DashBoardLayout = ({children}) => {
   return (
     <Box sx={{display: 'flex'}}>
-      <NavBar />
+      {/* <NavBar /> */}
       <SirdeBar drawerWidth={drawerWidth} />
       <Box
         component='main'
-        sx={{flexGrow: 1, p: 2, mt: 6}}
+        sx={{flexGrow: 1, p: 2, mt: 0}}
       >
         {children}
       </Box>
