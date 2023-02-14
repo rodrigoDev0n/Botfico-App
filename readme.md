@@ -2,6 +2,8 @@
 
 >Para poder correr el proyecto de manera local:
 
+>Aplicación web de botfico un software de contabilidad.
+
 ****
 
 ~~~~
