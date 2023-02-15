@@ -32,7 +32,7 @@ export const buttonIconTextData = [
   {
     id: 4,
     name: 'Contabilidad',
-    icon: 'savings',
+    icon: 'assessment',
     route: '/contabilidad',
     active: false,
   },
@@ -52,7 +52,7 @@ export const buttonIconTextData = [
   },
   {
     id: 7,
-    name: 'Clientes/Proveedores',
+    name: 'Cliente/Proveedor',
     icon: 'people',
     route: '/proveedores',
     active: false,

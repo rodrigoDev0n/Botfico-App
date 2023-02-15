@@ -1,15 +1,15 @@
 import { LogoutOutlined } from "@mui/icons-material"
 
-import { 
-  Avatar, 
-  Box, 
-  Button, 
-  Divider, 
-  Drawer, 
-  Grid, 
-  List, 
-  Toolbar, 
-  Typography 
+import {
+  Avatar,
+  Box,
+  Button,
+  Divider,
+  Drawer,
+  Grid,
+  List,
+  Toolbar,
+  Typography
 } from "@mui/material"
 
 import { deepOrange } from "@mui/material/colors"
@@ -32,7 +32,7 @@ export const SirdeBar = ({ drawerWidth = 240 }) => {
         },
         flexShrink: { sm: 0 },
       }}
-    > 
+    >
       {
         loginUser
         && <Navigate to='auth/login' replace={true} />
@@ -45,7 +45,7 @@ export const SirdeBar = ({ drawerWidth = 240 }) => {
           '& .MuiDrawer-paper': {
             boxSizing: 'border-box',
             width: drawerWidth,
-            backgroundColor: 'primary.main'
+            backgroundColor: '#fff'/* 'primary.main' */
           },
         }}
       >
@@ -59,17 +59,33 @@ export const SirdeBar = ({ drawerWidth = 240 }) => {
             <Avatar sx={{ bgcolor: deepOrange[500], mt: 3 }}>
               RP
             </Avatar>
-            <Typography sx={{ color: '#ffff', fontWeight: 'bold', mt: 1 }}>
+            <Typography sx={{ color: '#000', fontWeight: 'bold', mt: 1 }}>
               Rodrigo Poblete
             </Typography>
           </Grid>
         </Toolbar>
         <Divider sx={{ mt: 3 }} />
-        <List>
-          <DashboArdButtons />
-        </List>
+        <Grid
+          item
+          sx={{
+            p: 2
+          }}
+        >
+          <Grid
+            item
+            className="box-shadow"
+            sx={{
+              backgroundColor: 'primary.main',
+              borderRadius: '20px'
+            }}
+          >
+            <List>
+              <DashboArdButtons />
+            </List>
+          </Grid>
+        </Grid>
         <Divider />
-        <Grid container alignItems="center" justifyContent="center" sx={{ mt: 5, p: 2 }}>
+        <Grid container alignItems="center" justifyContent="center" sx={{ mt: 1, p: 2 }}>
           <Grid item xs={12}>
             <Button
               onClick={logOut}

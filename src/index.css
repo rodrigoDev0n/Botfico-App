@@ -46,6 +46,10 @@
   text-decoration: none;
 }
 
+.custom-button:hover {
+  background-color: #083d68d9;
+}
+
 /* NOTE: Animación de aparición del formulario 🤓 */
 @keyframes appear {
   0% {

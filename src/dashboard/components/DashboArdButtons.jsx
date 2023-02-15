@@ -2,7 +2,6 @@
 import {
   ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
   Typography
 } from "@mui/material"
@@ -18,24 +17,28 @@ export const DashboArdButtons = () => {
 
   return (
     <>
-      <ListItem disablePadding sx={{ pl: 2, mt: 2 }}>
+      <ListItem disablePadding sx={{ pl: 2, mt: 1 }}>
         <Typography variant="p" sx={{ color: '#ffff', fontWeight: 'bolder' }}>
           Items
         </Typography>
       </ListItem>
-
       {
         buttonIconTextData.map(({ icon, name, route, id, active }) => (
           <Link to={route} className="custom-link" key={id}>
             <ListItem>
               <ListItemButton onClick={() => onActiveButton(id)} sx={{
                 backgroundColor: active ? 'primary.secondary' : '',
-                borderRadius: 10
+                boxShadow: active ? '0px 3px 2px rgba(0, 0, 0, 0.2)': '',
+                borderRadius: 10,
+                ":hover": {
+                  backgroundColor: 'primary.secondary',
+                }
               }}>
-                <ListItemIcon>
-                  <Icon sx={{ color: '#ffff' }}>{icon}</Icon>
-                </ListItemIcon>
-                <ListItemText primary={name} sx={{ color: 'dashboardtextcolors.main' }} />
+                <Icon sx={{ color: '#ffff' }}>{icon}</Icon>
+                <ListItemText primary={name} sx={{
+                  color: 'dashboardtextcolors.main',
+                  ml: 2,
+                }} />
               </ListItemButton>
             </ListItem>
           </Link>

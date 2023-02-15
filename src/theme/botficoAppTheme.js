@@ -5,7 +5,7 @@ export const botficoAppTheme = createTheme({
   palette: {
     primary: {
       main: '#1e4f79',
-      secondary: '#1c4c74',
+      secondary: '#083d68d9',
     },
     secondary: {
       main: '#ffffff',
