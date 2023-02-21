@@ -1,8 +1,11 @@
-import { Grid } from "@mui/material"
+import { ArrowDropDown } from "@mui/icons-material"
+import { Button, Grid } from "@mui/material"
 import { Box } from "@mui/system"
+import { Buttons } from "../components/Buttons"
 import { VentasFirstContainer } from "../components/VentasFirstContainer"
 import { VentasSecondContainer } from "../components/VentasSecondContainer"
 import { VentasTableViewer } from "../components/VentasTableViewer"
+import { ventasButtons } from "../helpers/buttonsData"
 
 export const VentasView = () => {
   return (
@@ -38,8 +41,33 @@ export const VentasView = () => {
             width: '100%',
             height: '100%'
           }}>
+          <Grid
+            item
+            sx={{
+              p: 0.5,
+              width: '100%',
+              height: '100px',
+            }}
+          >
+            <Grid
+              item
+              className="box-shadow animated_view_component"
+              sx={{
+                p: 1,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                width: '100%',
+                height: '100px',
+                borderRadius: '15px'
+              }}
+            >
+              <Buttons buttonsData={ventasButtons} />
+            </Grid>
+          </Grid>
           <Box
             sx={{
+              mt: 2,
               display: 'flex',
               flexDirection: {
                 xs: 'column',
@@ -61,18 +89,40 @@ export const VentasView = () => {
                 borderRadius: '15px',
               }}>
                 <Grid item className="" sx={{
+                  pr: 1,
                   width: '50%',
                   height: '100%',
                   borderRadius: '15px'
                 }}>
-                  <VentasFirstContainer />
+                  <Grid
+                    item
+                    className="box-shadow"
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: '15px'
+                    }}
+                  >
+                    <VentasFirstContainer />
+                  </Grid>
                 </Grid>
                 <Grid item className="" sx={{
+                  pl: 1,
                   width: '50%',
                   height: '100%',
                   borderRadius: '15px'
                 }}>
-                  <VentasSecondContainer />
+                  <Grid
+                    item
+                    className="box-shadow"
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: '15px'
+                    }}
+                  >
+                    <VentasSecondContainer />
+                  </Grid>
                 </Grid>
               </Grid>
               <Grid item className="box-shadow animated_view animated_view_component-3" sx={{
@@ -81,7 +131,7 @@ export const VentasView = () => {
                 borderRadius: '15px',
                 mt: 2
               }}>
-                {/* TODO: Añadair table viewer */}
+                {/* Ventas table viewer */}
                 <VentasTableViewer />
               </Grid>
             </Box>

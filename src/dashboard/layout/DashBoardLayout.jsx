@@ -11,7 +11,9 @@ export const DashBoardLayout = ({children}) => {
       <SirdeBar drawerWidth={drawerWidth} />
       <Box
         component='main'
-        sx={{flexGrow: 1, p: 2, mt: 0}}
+        sx={{
+          flexGrow: 1, p: 2, mt: 0
+        }}
       >
         {children}
       </Box>

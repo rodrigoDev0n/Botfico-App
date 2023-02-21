@@ -21,12 +21,13 @@ export const BankLineChart = () => {
     datasets: [{
         label: 'Bank balance',
         data: [8,7,8,7,6,4,5,8],
+        borderColor: '#EB7138',
     }]
   }
   
   const options = {}
 
   return (
-    <Line data={data} options={options}></Line>
+    <Line width={450} height={110} data={data} options={options}></Line>
   )
 }

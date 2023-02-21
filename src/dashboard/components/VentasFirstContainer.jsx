@@ -9,7 +9,7 @@ export const VentasFirstContainer = () => {
             width: '100%',
             height: '100%'
         }}>
-            <Grid item alignItems="center" display="flex" justifyContent="flex-start">
+            <Grid item alignItems="center" display="flex" justifyContent="flex-start" sx={{mt: 5}}>
                 <Typography sx={{ color: '#6f5765', fontWeight: 'bold', fontSize: '15px' }} variant="p">
                     $555.555.555
                 </Typography>

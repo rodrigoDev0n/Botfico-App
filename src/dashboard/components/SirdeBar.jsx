@@ -15,6 +15,7 @@ import {
 import { deepOrange } from "@mui/material/colors"
 import { useState } from "react"
 import { Navigate } from "react-router-dom"
+import { DarkModeButton } from "../../components/DarkModeButton"
 import { DashboArdButtons } from "./DashboArdButtons"
 
 export const SirdeBar = ({ drawerWidth = 240 }) => {
@@ -87,6 +88,12 @@ export const SirdeBar = ({ drawerWidth = 240 }) => {
         <Divider />
         <Grid container alignItems="center" justifyContent="center" sx={{ mt: 1, p: 2 }}>
           <Grid item xs={12}>
+            <Grid item sx={{
+              display: 'flex',
+              justifyContent: 'center'
+            }}>
+              <DarkModeButton />
+            </Grid>
             <Button
               onClick={logOut}
               variant="contained"

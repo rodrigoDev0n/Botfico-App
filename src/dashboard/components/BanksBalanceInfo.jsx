@@ -35,7 +35,7 @@ export const BanksBalanceInfo = ({name, button}) => {
                     {button}
                 </Button>
                 <Typography variant="p" sx={{fontWeight: 'bold', color: 'textcolor.main'}}>Balance sobre GL</Typography>
-                <Typography variant="p" sx={{fontWeight: 'bold', color: 'textcolor.secondary'}}>111.111.111</Typography>
+                <Typography variant="p" sx={{fontWeight: 'bold', color: 'textcolor.secondary'}}>$111.111.111</Typography>
             </Grid>
             <Grid
                 item

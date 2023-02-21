@@ -21,7 +21,7 @@ export const PieChart = () => {
     datasets: [
         {
             data: [3,6,9],
-            backgroundColor: ['#03c1bf', '#15efe9', '#028380']
+            backgroundColor: ['#03c1bf', '#15efe9', '#028380',]
         }
     ]
   } 
