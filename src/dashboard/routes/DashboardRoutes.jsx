@@ -14,7 +14,7 @@ import {
 export const DashboardRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<DashboardPage />} />
+      <Route path="/*" element={<DashboardPage />} />
 
       <Route path="/ventas" element={<VentasPage />} />
 
@@ -32,7 +32,7 @@ export const DashboardRoutes = () => {
 
       <Route path="/configuracion" element={<ConfiguracionPage />} />
 
-      <Route path="/*" element={<Navigate to="/" />} />
+      <Route path="/*" element={<Navigate to="dashboard/*" />} />
 
     </Routes>
   )

@@ -62,7 +62,7 @@ export const DarkModeButton = () => {
     return (
         <FormGroup>
             <FormControlLabel
-                control={<DarkModeSwitch sx={{ m: 1 }} />}
+                control={<DarkModeSwitch onChange={isChecked} sx={{ m: 1 }} />}
                 label={checked ? 'Modo Oscuro': 'Modo claro'}
                 onChange={isChecked}
             />

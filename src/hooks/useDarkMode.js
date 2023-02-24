@@ -1,25 +1,25 @@
 import { useState } from "react"
-import { botficoAppTheme } from "../theme/botficoAppTheme"
+import { botficoAppTheme, themes } from "../theme/botficoAppTheme"
 import { botficoDarkTheme } from "../theme/botficoDarkTheme"
 
 export const useDarkMode = () => {
   const [checked, setchecked] = useState(false)
-  const [themeData, setthemeData] = useState(botficoAppTheme)
+  const [themeData, setthemeData] = useState(themes[0])
 
   const isChecked = () => {
       setchecked(true)
       if (checked) {
           setchecked(false)
+          setthemeData(themes[1])
       }
-      setTheme()
-      console.log(themeData);
   }
 
   const setTheme = () => {
     if (checked) {
-      setthemeData(botficoDarkTheme)
-    } else {
-      setthemeData(botficoAppTheme)
+      setthemeData(themes[1])
+    } 
+    if (!checked) {
+      setthemeData(themes[0])
     }
   }
 

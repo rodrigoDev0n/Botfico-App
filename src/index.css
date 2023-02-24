@@ -1,3 +1,9 @@
+
+/* Esconde la barra de scroll */
+::-webkit-scrollbar {
+  display: none;
+}
+
 .box-shadow {
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
@@ -48,6 +54,7 @@
 
 .custom-button:hover {
   background-color: #083d68d9;
+  transform: translateX(100px);
 }
 
 /* NOTE: Animación de aparición del formulario 🤓 */

@@ -29,3 +29,11 @@ export const contabilidadButtons = [
     { name: 'Productos y servicios' },
     { name: 'Configuración' }
 ]
+
+export const inventariosButtons = [
+    { name: 'Recepciones' },
+    { name: 'Operaciones' },
+    { name: 'Productos y Servicios' },
+    { name: 'Informes' },
+    { name: 'Configuración' }
+]

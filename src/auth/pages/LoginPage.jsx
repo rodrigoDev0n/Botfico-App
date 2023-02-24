@@ -1,20 +1,26 @@
 import { Google } from "@mui/icons-material"
-import { Link as RouterLink, Navigate } from 'react-router-dom'
+import { Link as RouterLink, Navigate, useNavigate } from 'react-router-dom'
 import { Button, Grid, Link, TextField, Typography } from "@mui/material"
 import { AuthLayout } from "../layout/AuthLayout"
 import { useState } from "react"
+import { useContext } from "react"
+import { AuthContext } from "../context/AuthContext"
 
 export const LoginPage = () => {
- 
-  const [loginUser, setloginUser] = useState(false)
-  const onLogin = () => setloginUser(true)
+
+  const {login} = useContext(AuthContext)
+  const navigate = useNavigate()
+
+  const onLogin = () => {
+    const lastPath = localStorage.getItem('lastPath') || '/'
+    login('admin')
+    navigate(lastPath, {
+      replace: true
+    })
+  }
 
   return (
     <AuthLayout title="Login">
-      {
-        loginUser
-        && <Navigate to='/' replace={true} />
-      }
       <form>
         <Grid container>
          <Grid item xs={12} sx={{marginTop: 2}}>

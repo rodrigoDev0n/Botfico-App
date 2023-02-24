@@ -13,15 +13,23 @@ import {
 } from "@mui/material"
 
 import { deepOrange } from "@mui/material/colors"
-import { useState } from "react"
-import { Navigate } from "react-router-dom"
+import { useContext, useState } from "react"
+import { Navigate, useNavigate } from "react-router-dom"
+import { AuthContext } from "../../auth/context/AuthContext"
 import { DarkModeButton } from "../../components/DarkModeButton"
 import { DashboArdButtons } from "./DashboArdButtons"
 
 export const SirdeBar = ({ drawerWidth = 240 }) => {
 
-  const [loginUser, setloginUser] = useState(false)
-  const logOut = () => setloginUser(true)
+  const {logout} = useContext(AuthContext)
+  const navigate = useNavigate()
+
+  const logOut = () => {
+    logout()
+    navigate('/login', {
+        replace: true,
+    });
+  }
 
   return (
     <Box
@@ -34,10 +42,6 @@ export const SirdeBar = ({ drawerWidth = 240 }) => {
         flexShrink: { sm: 0 },
       }}
     >
-      {
-        loginUser
-        && <Navigate to='auth/login' replace={true} />
-      }
       <Drawer
         variant="persistent"
         open

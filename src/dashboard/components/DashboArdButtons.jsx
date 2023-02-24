@@ -34,7 +34,7 @@ export const DashboArdButtons = () => {
                   backgroundColor: 'primary.secondary',
                 }
               }}>
-                <Icon sx={{ color: '#ffff' }}>{icon}</Icon>
+                <Icon className="custom-icon" sx={{ color: '#ffff' }}>{icon}</Icon>
                 <ListItemText primary={name} sx={{
                   color: 'dashboardtextcolors.main',
                   ml: 2,
