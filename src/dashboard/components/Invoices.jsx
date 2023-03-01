@@ -1,17 +1,17 @@
 import { Grid, Typography } from "@mui/material"
 import { HorizontalBarChart } from "../charts/components/HorizontalBarChart"
 
-export const Invoices = () => {
+export const Invoices = ({textcolor}) => {
     return (
         <>
             <Typography sx={{ p: 2, fontWeight: 'bold' }} variant="h5">
                 Invoices
             </Typography>
             <Grid item sx={{ pl: 2 }} alignItems="center" display="flex" justifyContent="space-between">
-                <Typography sx={{ color: '#6f5765', fontWeight: 'bold', fontSize: '15px' }} variant="p">
+                <Typography sx={{ color: textcolor, fontWeight: 'bold', fontSize: '15px' }} variant="p">
                     $555.555.555
                 </Typography>
-                <Typography sx={{ color: '#b2b7c1', fontWeight: 'bold', pr: 25, fontSize: '10px' }} variant="p">
+                <Typography sx={{ fontWeight: 'bold', pr: 25, fontSize: '10px' }} variant="p">
                     LAST 365 DAYS
                 </Typography>
             </Grid>
@@ -34,7 +34,7 @@ export const Invoices = () => {
                     </Typography>
                 </Grid>
             </Grid>
-            <Grid sx={{ pl: 2, pr: 2 }}>
+           <Grid sx={{ pl: 2, pr: 2 }}>
                 <HorizontalBarChart 
                     color={'orange'}
                     secondColor={'#d5d7dd'}
@@ -43,10 +43,10 @@ export const Invoices = () => {
                 />
             </Grid>
             <Grid item sx={{ mt: 3, alignItems: 'center', display: 'flex', pl: 2 }}>
-                <Typography variant="p" sx={{ color: '#6f5765', fontWeight: 'bold', fontSize: '15px' }}>
+                <Typography variant="p" sx={{fontWeight: 'bold', fontSize: '15px' }}>
                     $444.444.444
                 </Typography>
-                <Typography variant="p" sx={{ color: '#b2b7c1', fontWeight: 'bold', pl: 2, fontSize: '11px' }}>
+                <Typography variant="p" sx={{fontWeight: 'bold', pl: 2, fontSize: '11px' }}>
                     LAST 365 DAYS
                 </Typography>
             </Grid>

@@ -2,7 +2,7 @@ import { ArrowDropDown } from "@mui/icons-material"
 import { Grid, Typography } from "@mui/material"
 import { HorizontalBarChart } from "../charts/components/HorizontalBarChart"
 
-export const ProfitLoss = () => {
+export const ProfitLoss = ({textcolor}) => {
     return (
         <>
             <Grid item display="flex" justifyContent="space-between" alignItems="center" sx={{ p: 2 }}>
@@ -10,7 +10,7 @@ export const ProfitLoss = () => {
                     Profit and lost
                 </Typography>
                 <Grid display="flex" justifyContent="space-around" alignItems="center">
-                    <Typography variant="p" sx={{ color: '#b3b2b3', fontWeight: 'bold' }}>
+                    <Typography variant="p" sx={{ color: textcolor, fontWeight: 'bold' }}>
                         Last month
                     </Typography>
                     <ArrowDropDown sx={{ color: '#b3b2b3' }} />

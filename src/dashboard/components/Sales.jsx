@@ -2,15 +2,18 @@ import { ArrowDropDown } from "@mui/icons-material"
 import { Grid, Typography } from "@mui/material"
 import { LineChart } from "../charts/components/LineChart"
 
-export const Sales = () => {
+export const Sales = ({textcolor, secondary}) => {
     return (
         <>
-            <Grid item display="flex" justifyContent="space-between" alignItems="center" sx={{ p: 2 }}>
+            <Grid item display="flex" justifyContent="space-between" alignItems="center" 
+                sx={{ 
+                  p: 2, 
+                }}>
                 <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
                     Sales
                 </Typography>
                 <Grid display="flex" justifyContent="space-around" alignItems="center">
-                    <Typography variant="p" sx={{ color: '#b3b2b3', fontWeight: 'bold' }}>
+                    <Typography variant="p" sx={{ color: textcolor, fontWeight: 'bold' }}>
                         Last month
                     </Typography>
                     <ArrowDropDown sx={{color: '#b3b2b3'}} />
@@ -25,7 +28,7 @@ export const Sales = () => {
                 </Typography>
             </Grid>
             <Grid>
-                <LineChart />
+                <LineChart textcolor={textcolor} />
             </Grid>
         </>
     )

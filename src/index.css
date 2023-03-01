@@ -36,6 +36,10 @@
   color: #0000;
 }
 
+.customtheme {
+  background-color: #000;
+}
+
 .dashboard-container {
   height: 95vh;
   width: 100%;

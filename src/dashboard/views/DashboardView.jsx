@@ -1,18 +1,21 @@
 import { Box, Grid, Typography } from "@mui/material"
+import { useEffect, useState } from "react"
+import { useDarkMode } from "../../hooks/useDarkMode"
 import { BankAccount } from "../components/BankAccount"
 import { ExpensesDashboard } from "../components/ExpensesDashboard"
 import { Invoices } from "../components/Invoices"
 import { ProfitLoss } from "../components/ProfitLoss"
 import { Sales } from "../components/Sales"
 
-export const DashboardView = () => {
+export const DashboardView = ({texcolor, secondary}) => {
+
   return (
     <Box
       sx={{
         display: 'flex',
         flexDirection: {
           xs: 'column',
-          sm: 'row'
+          sm: 'row',
         },
         width: '100%',
         height: {
@@ -27,7 +30,7 @@ export const DashboardView = () => {
           sm: 'row'
         },
         width: '100%',
-        height: '95vh',
+        height: '97vh',
       }}>
         <Box sx={{
           display: 'flex',
@@ -54,9 +57,9 @@ export const DashboardView = () => {
               <Grid item className="box-shadow animated_view_component" sx={{
                 width: '100%',
                 height: '100%',
-                borderRadius: '15px'
+                borderRadius: '15px',
               }}>
-                <Invoices />
+                <Invoices textcolor={texcolor} secondary={secondary} />
               </Grid>
             </Box>
             <Box sx={{
@@ -69,7 +72,7 @@ export const DashboardView = () => {
                 height: '100%',
                 borderRadius: '15px'
               }}>
-                <ExpensesDashboard />
+                <ExpensesDashboard textcolor={texcolor} />
               </Grid>
             </Box>
           </Box>
@@ -92,7 +95,7 @@ export const DashboardView = () => {
                 height: '100%',
                 borderRadius: '15px'
               }}>
-                <ProfitLoss />
+                <ProfitLoss textcolor={texcolor} />
               </Grid>
             </Box>
             <Box sx={{
@@ -105,7 +108,7 @@ export const DashboardView = () => {
                 height: '100%',
                 borderRadius: '15px'
               }}>
-                <Sales />
+                <Sales textcolor={texcolor} secondary={secondary} />
               </Grid>
             </Box>
           </Box>

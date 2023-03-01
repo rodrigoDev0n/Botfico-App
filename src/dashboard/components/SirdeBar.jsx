@@ -13,16 +13,53 @@ import {
 } from "@mui/material"
 
 import { deepOrange } from "@mui/material/colors"
-import { useContext, useState } from "react"
+import { useContext, useReducer, useState } from "react"
 import { Navigate, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../auth/context/AuthContext"
 import { DarkModeButton } from "../../components/DarkModeButton"
+import { useDarkMode } from "../../hooks/useDarkMode"
+import { darkModeReducer } from "../../reducer/darkModeReducer"
 import { DashboArdButtons } from "./DashboArdButtons"
 
-export const SirdeBar = ({ drawerWidth = 240 }) => {
+// NOTE: Eliminar codigo comentado
 
+/* const init = () => {
+  return {
+    theme: 'DarkMode',
+    active: false,
+  }
+} */
+export const SirdeBar = ({ 
+  drawerWidth = 240, 
+  disableDarkMode, 
+  setDarkMode, 
+  state, 
+  primary, 
+  textcolor 
+}) => {
+  /* const [state, dispatch] = useReducer(darkModeReducer, init) */
   const {logout} = useContext(AuthContext)
   const navigate = useNavigate()
+
+/*   const setDarkMode = () => {
+    const action = {
+      type: '[Theme] Switch Theme',
+      payload: true,
+    }
+
+    dispatch(action)
+    console.log(state)
+  }
+
+  const disableDarkMode = () => {
+    const action = {
+      type: '[Theme] Light Theme',
+      payload: false,
+    }
+  
+    dispatch(action)
+    console.log(state)
+  } */
 
   const logOut = () => {
     logout()
@@ -50,7 +87,7 @@ export const SirdeBar = ({ drawerWidth = 240 }) => {
           '& .MuiDrawer-paper': {
             boxSizing: 'border-box',
             width: drawerWidth,
-            backgroundColor: '#fff'/* 'primary.main' */
+            backgroundColor: primary /* 'primary.main' */,
           },
         }}
       >
@@ -64,7 +101,7 @@ export const SirdeBar = ({ drawerWidth = 240 }) => {
             <Avatar sx={{ bgcolor: deepOrange[500], mt: 3 }}>
               RP
             </Avatar>
-            <Typography sx={{ color: '#000', fontWeight: 'bold', mt: 1 }}>
+            <Typography sx={{ color: textcolor, fontWeight: 'bold', mt: 1 }}>
               Rodrigo Poblete
             </Typography>
           </Grid>
@@ -96,13 +133,17 @@ export const SirdeBar = ({ drawerWidth = 240 }) => {
               display: 'flex',
               justifyContent: 'center'
             }}>
-              <DarkModeButton />
+              <DarkModeButton 
+                setDarkMode={setDarkMode} 
+                disableDarkMode={disableDarkMode} 
+                state={state} 
+              />
             </Grid>
             <Button
               onClick={logOut}
               variant="contained"
               fullWidth
-              sx={{ backgroundColor: 'error.main', borderRadius: 5 }}
+              sx={{ backgroundColor: 'red', borderRadius: 5 }}
             >
               <LogoutOutlined />
               <Typography sx={{ ml: 1 }}>

@@ -1,31 +1,68 @@
-import { useState } from "react"
-import { botficoAppTheme, themes } from "../theme/botficoAppTheme"
-import { botficoDarkTheme } from "../theme/botficoDarkTheme"
+import { useEffect, useReducer, useState } from "react"
+import { darkModeReducer } from "../reducer/darkModeReducer"
+
+// Inicializa el reducer..
+const init = () => {
+  return {
+    background: '#fff',
+    active: false,
+  }
+}
 
 export const useDarkMode = () => {
-  const [checked, setchecked] = useState(false)
-  const [themeData, setthemeData] = useState(themes[0])
 
-  const isChecked = () => {
-      setchecked(true)
-      if (checked) {
-          setchecked(false)
-          setthemeData(themes[1])
-      }
+  const [state, dispatch] = useReducer(darkModeReducer, init)
+  const [theme, setTheme] = useState(state.background) 
+
+  const customColors = {
+      primary: state.active ? '#1E3D5E' /*'#1e4f78'*/ : '#fff',
+      secondary: state.active ? '#1e4f79' : '#fff',
+      textcolor: state.active ? '#fff' : '#000'
   }
 
-  const setTheme = () => {
-    if (checked) {
-      setthemeData(themes[1])
-    } 
-    if (!checked) {
-      setthemeData(themes[0])
+  const setDarkMode = () => {
+    let action = {
+      type: '[Theme] Dark Mode',
+      background: '#000',
+      payload: true
     }
+  
+    setTheme(state.background)
+
+    dispatch(action)
+    console.log(theme)
   }
+
+  const disableDarkMode = () => {
+    const action = {
+      type: '[Theme] Light Theme',
+      background: '#fff',
+      payload: false,
+    }
+  
+    dispatch(action)
+  }
+
+  // Contiene colores custom del tema.....
+  const customColor = {
+    primary: state.active ? '#1e4f78': '#fff',
+    textcolor: state.active ? '#fff': '#000'
+  }
+
+  const {primary, secondary, textcolor} = customColors
+
+  useEffect(() => {
+    setTheme(primary)
+    console.log(theme)
+  }, [state.active])
 
   return {
-    isChecked,
-    checked,
-    themeData,
+    state,
+    setDarkMode,
+    disableDarkMode,
+    primary,
+    secondary,
+    textcolor,
+    theme
   }
 }

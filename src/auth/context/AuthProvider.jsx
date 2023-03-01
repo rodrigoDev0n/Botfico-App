@@ -12,6 +12,8 @@ const init = () => {
 }
 
 export const AuthProvider = ({children}) => {
+
+  const newvar = "Esto es una nueva varable para probar el contraste de la terminal :D"
   
   const [state, dispatch] = useReducer(authReducer, {}, init)
 

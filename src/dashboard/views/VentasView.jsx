@@ -1,6 +1,7 @@
 import { ArrowDropDown } from "@mui/icons-material"
 import { Button, Grid } from "@mui/material"
 import { Box } from "@mui/system"
+import { useDarkMode } from "../../hooks/useDarkMode"
 import { Buttons } from "../components/Buttons"
 import { VentasFirstContainer } from "../components/VentasFirstContainer"
 import { VentasSecondContainer } from "../components/VentasSecondContainer"
@@ -8,6 +9,9 @@ import { VentasTableViewer } from "../components/VentasTableViewer"
 import { ventasButtons } from "../helpers/buttonsData"
 
 export const VentasView = () => {
+
+  const {textcolor} = useDarkMode()
+
   return (
     <Box
       sx={{
@@ -62,7 +66,7 @@ export const VentasView = () => {
                 borderRadius: '15px'
               }}
             >
-              <Buttons buttonsData={ventasButtons} />
+              <Buttons buttonsData={ventasButtons} textcolor={textcolor} />
             </Grid>
           </Grid>
           <Box
@@ -100,10 +104,10 @@ export const VentasView = () => {
                     sx={{
                       width: '100%',
                       height: '100%',
-                      borderRadius: '15px'
+                      borderRadius: '15px',
                     }}
                   >
-                    <VentasFirstContainer />
+                    <VentasFirstContainer textcolor={textcolor} />
                   </Grid>
                 </Grid>
                 <Grid item className="" sx={{
@@ -121,7 +125,7 @@ export const VentasView = () => {
                       borderRadius: '15px'
                     }}
                   >
-                    <VentasSecondContainer />
+                    <VentasSecondContainer textcolor={textcolor} />
                   </Grid>
                 </Grid>
               </Grid>
@@ -132,7 +136,7 @@ export const VentasView = () => {
                 mt: 2
               }}>
                 {/* Ventas table viewer */}
-                <VentasTableViewer />
+                <VentasTableViewer textcolor={textcolor} />
               </Grid>
             </Box>
           </Box>

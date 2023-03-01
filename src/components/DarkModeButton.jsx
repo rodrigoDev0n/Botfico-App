@@ -5,8 +5,9 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import Switch from '@mui/material/Switch'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import { useState } from 'react'
+import { useState, useReducer } from 'react'
 import { useDarkMode } from '../hooks/useDarkMode'
+import { darkModeReducer } from '../reducer/darkModeReducer'
 
 const DarkModeSwitch = styled(Switch)(({ theme }) => ({
     width: 62,
@@ -55,16 +56,59 @@ const DarkModeSwitch = styled(Switch)(({ theme }) => ({
     },
 }))
 
-export const DarkModeButton = () => {
+// Dark mode inicializer --> 
+/*
+const init = () => {
+  return {
+    theme: 'DarkMode',
+    active: false,
+  }
+}
+darkModeReducer*/
+// NOTE: Quitar codigo comentado una vez solucionado el problema
 
-    const {checked, isChecked} = useDarkMode()
+export const DarkModeButton = ({setDarkMode, disableDarkMode, state}) => {
+
+   // const [state, dispatch] = useReducer(darkModeReducer, init) 
+
+   /* const setDarkMode = () => {
+      const action = {
+        type: '[Theme] Switch Theme',
+        payload: true,
+      }
+      
+      dispatch( action )
+   }
+
+   const disabledDarkMode = () => {
+      const action = {
+        type: '[Theme] Light Theme',
+        payload: false,
+      }
+      
+      dispatch( action )
+  } 
+    
+    const {checked} = useDarkMode(state.active)
+
+*/
+    const enable = () => {
+      console.log(state.background)
+      if (!state.active) setDarkMode()
+      if (state.active) disable() 
+    }
+
+    const disable = () => {
+      disableDarkMode()
+    }
 
     return (
         <FormGroup>
             <FormControlLabel
-                control={<DarkModeSwitch onChange={isChecked} sx={{ m: 1 }} />}
-                label={checked ? 'Modo Oscuro': 'Modo claro'}
-                onChange={isChecked}
+                control={<DarkModeSwitch sx={{ m: 1 }} />}
+                label={state.active ? 'Modo Oscuro': 'Modo claro'}
+                sx={{color: state.active ? '#fff': '#000'}}
+                onChange={enable}
             />
         </FormGroup>
     )
