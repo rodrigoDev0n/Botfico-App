@@ -1,6 +1,9 @@
+import { ThemeContext } from "@emotion/react"
 import { ArrowDropDown } from "@mui/icons-material"
 import { Button, Grid } from "@mui/material"
 import { Box } from "@mui/system"
+import { useContext } from "react"
+import { ThemeCustomProvider } from "../../context/ThemeCustomProvider"
 import { useDarkMode } from "../../hooks/useDarkMode"
 import { Buttons } from "../components/Buttons"
 import { VentasFirstContainer } from "../components/VentasFirstContainer"
@@ -9,8 +12,6 @@ import { VentasTableViewer } from "../components/VentasTableViewer"
 import { ventasButtons } from "../helpers/buttonsData"
 
 export const VentasView = () => {
-
-  const {textcolor} = useDarkMode()
 
   return (
     <Box
@@ -34,7 +35,7 @@ export const VentasView = () => {
             sm: 'row'
           },
           width: '100%',
-          height: '95vh',
+          height: '100vh',
         }}>
         <Box
           sx={{
@@ -66,7 +67,7 @@ export const VentasView = () => {
                 borderRadius: '15px'
               }}
             >
-              <Buttons buttonsData={ventasButtons} textcolor={textcolor} />
+              <Buttons buttonsData={ventasButtons} />
             </Grid>
           </Grid>
           <Box
@@ -107,7 +108,7 @@ export const VentasView = () => {
                       borderRadius: '15px',
                     }}
                   >
-                    <VentasFirstContainer textcolor={textcolor} />
+                    <VentasFirstContainer />
                   </Grid>
                 </Grid>
                 <Grid item className="" sx={{
@@ -125,7 +126,7 @@ export const VentasView = () => {
                       borderRadius: '15px'
                     }}
                   >
-                    <VentasSecondContainer textcolor={textcolor} />
+                    <VentasSecondContainer />
                   </Grid>
                 </Grid>
               </Grid>
@@ -136,7 +137,7 @@ export const VentasView = () => {
                 mt: 2
               }}>
                 {/* Ventas table viewer */}
-                <VentasTableViewer textcolor={textcolor} />
+                <VentasTableViewer />
               </Grid>
             </Box>
           </Box>

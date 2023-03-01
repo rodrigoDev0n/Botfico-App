@@ -27,16 +27,16 @@ export const DashboArdButtons = () => {
           <Link to={route} className="custom-link" key={id}>
             <ListItem>
               <ListItemButton onClick={() => onActiveButton(id)} sx={{
-                backgroundColor: active ? 'primary.secondary' : '',
+                backgroundColor: active ? '#0c416b' : '',
                 boxShadow: active ? '0px 3px 2px rgba(0, 0, 0, 0.2)': '',
                 borderRadius: 10,
                 ":hover": {
-                  backgroundColor: 'primary.secondary',
+                  backgroundColor: '#0c416b',
                 }
               }}>
                 <Icon className="custom-icon" sx={{ color: '#ffff' }}>{icon}</Icon>
                 <ListItemText primary={name} sx={{
-                  color: 'dashboardtextcolors.main',
+                  color: '#fff',
                   ml: 2,
                 }} />
               </ListItemButton>

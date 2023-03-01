@@ -14,7 +14,7 @@ export const useDarkMode = () => {
   const [state, dispatch] = useReducer(darkModeReducer, init)
   const [theme, setTheme] = useState(state.background) 
 
-  const customColors = {
+  let customColors = {
       primary: state.active ? '#1E3D5E' /*'#1e4f78'*/ : '#fff',
       secondary: state.active ? '#1e4f79' : '#fff',
       textcolor: state.active ? '#fff' : '#000'
@@ -49,7 +49,7 @@ export const useDarkMode = () => {
     textcolor: state.active ? '#fff': '#000'
   }
 
-  const {primary, secondary, textcolor} = customColors
+  let {primary, secondary, textcolor} = customColors
 
   useEffect(() => {
     setTheme(primary)

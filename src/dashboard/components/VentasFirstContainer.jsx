@@ -1,7 +1,19 @@
+import { useTheme } from "@mui/material"
 import { Grid, Typography } from "@mui/material"
+import { useContext, useEffect, useState } from "react"
+import { ThemeContext } from "../../context/ThemeContext"
+import { tokens } from "../../theme/botficoAppTheme"
 import { HorizontalBarChart } from "../charts/components/HorizontalBarChart"
 
-export const VentasFirstContainer = ({textcolor}) => {
+export const VentasFirstContainer = () => {
+
+    const {textcolor, state} = useContext(ThemeContext)
+
+    const [colortext, setcolortext] = useState('#000')
+  
+    const theme = useTheme()
+    const colors = tokens(theme.palette.mode)
+
     return (
         <Grid className="animated_view_component" sx={{
             p: 2,
@@ -10,7 +22,7 @@ export const VentasFirstContainer = ({textcolor}) => {
             height: '100%'
         }}>
             <Grid item alignItems="center" display="flex" justifyContent="flex-start" sx={{mt: 5}}>
-                <Typography sx={{ color:'#6f5765', fontWeight: 'bold', fontSize: '15px' }} variant="p">
+                <Typography sx={{ color: 'textcolor.main', fontWeight: 'bold', fontSize: '15px' }} variant="p">
                     $555.555.555
                 </Typography>
                 <Typography sx={{ ml: '10px', color: '#b2b7c1', fontWeight: 'bold', pr: 25, fontSize: '10px' }} variant="p">

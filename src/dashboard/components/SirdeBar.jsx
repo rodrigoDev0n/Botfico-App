@@ -1,3 +1,4 @@
+import { colors, useTheme } from "@mui/material"
 import { LogoutOutlined } from "@mui/icons-material"
 
 import {
@@ -20,6 +21,7 @@ import { DarkModeButton } from "../../components/DarkModeButton"
 import { useDarkMode } from "../../hooks/useDarkMode"
 import { darkModeReducer } from "../../reducer/darkModeReducer"
 import { DashboArdButtons } from "./DashboArdButtons"
+import { tokens } from "../../theme/botficoAppTheme"
 
 // NOTE: Eliminar codigo comentado
 
@@ -40,6 +42,9 @@ export const SirdeBar = ({
   /* const [state, dispatch] = useReducer(darkModeReducer, init) */
   const {logout} = useContext(AuthContext)
   const navigate = useNavigate()
+
+  const theme = useTheme()
+  const color = tokens(theme.palette.mode)
 
 /*   const setDarkMode = () => {
     const action = {
@@ -87,7 +92,7 @@ export const SirdeBar = ({
           '& .MuiDrawer-paper': {
             boxSizing: 'border-box',
             width: drawerWidth,
-            backgroundColor: primary /* 'primary.main' */,
+            backgroundColor: 'primary.main',
           },
         }}
       >
@@ -101,7 +106,7 @@ export const SirdeBar = ({
             <Avatar sx={{ bgcolor: deepOrange[500], mt: 3 }}>
               RP
             </Avatar>
-            <Typography sx={{ color: textcolor, fontWeight: 'bold', mt: 1 }}>
+            <Typography sx={{ color: 'textcolor.main', fontWeight: 'bold', mt: 1 }}>
               Rodrigo Poblete
             </Typography>
           </Grid>
@@ -117,7 +122,7 @@ export const SirdeBar = ({
             item
             className="box-shadow"
             sx={{
-              backgroundColor: 'primary.main',
+              backgroundColor: '#1e4f78',
               borderRadius: '20px'
             }}
           >

@@ -17,15 +17,15 @@ export const AuthLayout = ({children, title=''}) => {
         xs={3}
         sx={{
           width: {md: 450},
-          backgroundColor: 'secondary.main',
+          backgroundColor: '#0c416b',
           padding: 3,
           borderRadius: 2,
         }}
       >
        <Grid container direction="row" alignItems="center">
-        <Grid container sx={{width: 5, height: 50, backgroundColor: 'primary.main', borderRadius: 10}}>
+        <Grid container sx={{width: 5, height: 50, backgroundColor: '#fff', borderRadius: 10}}>
         </Grid>
-        <Typography variant="h2" sx={{fontWeight: 'bold', color: 'primary.main'}}>
+        <Typography variant="h2" sx={{fontWeight: 'bold', color: '#fff'}}>
           {title}
         </Typography>
        </Grid>

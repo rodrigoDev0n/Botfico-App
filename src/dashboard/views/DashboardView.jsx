@@ -1,6 +1,8 @@
+import { useTheme } from "@mui/material"
 import { Box, Grid, Typography } from "@mui/material"
 import { useEffect, useState } from "react"
 import { useDarkMode } from "../../hooks/useDarkMode"
+import { tokens } from "../../theme/botficoAppTheme"
 import { BankAccount } from "../components/BankAccount"
 import { ExpensesDashboard } from "../components/ExpensesDashboard"
 import { Invoices } from "../components/Invoices"
@@ -8,6 +10,10 @@ import { ProfitLoss } from "../components/ProfitLoss"
 import { Sales } from "../components/Sales"
 
 export const DashboardView = ({texcolor, secondary}) => {
+
+
+  const theme = useTheme()
+  const colors = tokens(theme.palette.mode)
 
   return (
     <Box
@@ -37,7 +43,7 @@ export const DashboardView = ({texcolor, secondary}) => {
           flexDirection: {
             xs: 'column',
           },
-          width: '100%',
+          width: '100%', 
           height: '100%',
         }}>
           <Box sx={{
@@ -57,7 +63,8 @@ export const DashboardView = ({texcolor, secondary}) => {
               <Grid item className="box-shadow animated_view_component" sx={{
                 width: '100%',
                 height: '100%',
-                borderRadius: '15px',
+                borderRadius: '15px', //cambiar color
+                //backgroundColor: colors.lightblue.default
               }}>
                 <Invoices textcolor={texcolor} secondary={secondary} />
               </Grid>
@@ -70,7 +77,8 @@ export const DashboardView = ({texcolor, secondary}) => {
               <Grid item className="box-shadow animated_view_component-2" sx={{
                 width: '100%',
                 height: '100%',
-                borderRadius: '15px'
+                borderRadius: '15px',
+                //backgroundColor: colors.lightblue.default
               }}>
                 <ExpensesDashboard textcolor={texcolor} />
               </Grid>
@@ -93,7 +101,8 @@ export const DashboardView = ({texcolor, secondary}) => {
               <Grid item className="box-shadow animated_view_component-3" sx={{
                 width: '100%',
                 height: '100%',
-                borderRadius: '15px'
+                borderRadius: '15px',
+                //backgroundColor: colors.lightblue.default
               }}>
                 <ProfitLoss textcolor={texcolor} />
               </Grid>
@@ -106,7 +115,8 @@ export const DashboardView = ({texcolor, secondary}) => {
               <Grid item className="box-shadow animated_view_component-4" sx={{
                 width: '100%',
                 height: '100%',
-                borderRadius: '15px'
+                borderRadius: '15px',
+                //backgroundColor: colors.lightblue.default
               }}>
                 <Sales textcolor={texcolor} secondary={secondary} />
               </Grid>
@@ -131,7 +141,7 @@ export const DashboardView = ({texcolor, secondary}) => {
           width: '100%',
           height: '100%',
           borderRadius: '15px',
-
+          //backgroundColor: colors.lightblue.default
         }}>
           <BankAccount />
         </Grid>

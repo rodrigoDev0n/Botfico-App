@@ -15,12 +15,16 @@ export const VentasTableViewer = () => {
         display: 'flex',
         justifyContent: 'space-between',
       }}>
-        <Button variant='outlined'>
+        <Button variant='outlined' sx={{
+          color: 'textcolor.main',
+          borderColor: 'textcolor.main'
+        }}>
            Batch functions
            <ArrowDropDown />
         </Button>
         <Button variant='contained' sx={{
-          backgroundColor: 'green'
+          backgroundColor: 'green',
+          color: '#fff'
         }}>
           NEW INVOICE
         </Button>

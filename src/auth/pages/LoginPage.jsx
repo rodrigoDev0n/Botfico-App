@@ -5,8 +5,13 @@ import { AuthLayout } from "../layout/AuthLayout"
 import { useState } from "react"
 import { useContext } from "react"
 import { AuthContext } from "../context/AuthContext"
+import { useTheme } from "@mui/material"
+import { tokens } from "../../theme/botficoAppTheme"
 
 export const LoginPage = () => {
+
+  const theme = useTheme()
+  const colors = tokens(theme.palette.mode)
 
   const {login} = useContext(AuthContext)
   const navigate = useNavigate()
@@ -22,7 +27,7 @@ export const LoginPage = () => {
   return (
     <AuthLayout title="Login">
       <form>
-        <Grid container>
+        <Grid container >
          <Grid item xs={12} sx={{marginTop: 2}}>
             <TextField
               label="Correo"
