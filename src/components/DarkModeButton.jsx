@@ -1,16 +1,8 @@
 import * as React from 'react'
-import { styled } from '@mui/material/styles'
-import FormGroup from '@mui/material/FormGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import Switch from '@mui/material/Switch'
-import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
-import { useState, useReducer, useContext } from 'react'
-import { useDarkMode } from '../hooks/useDarkMode'
-import { darkModeReducer } from '../reducer/darkModeReducer'
+import { useContext } from 'react'
 import { Grid, IconButton, useTheme } from '@mui/material'
 import { ColorModeContext, tokens } from '../theme/botficoAppTheme'
-import { DarkModeOutlined, LightModeOutlined, LightModeRounded } from '@mui/icons-material'
+import { DarkMode, LightMode } from '@mui/icons-material'
 
 export const DarkModeButton = ({ setDarkMode, disableDarkMode, state }) => {
 
@@ -36,9 +28,9 @@ export const DarkModeButton = ({ setDarkMode, disableDarkMode, state }) => {
             >
                 <IconButton onClick={enable}>
                     {theme.palette.mode === 'dark' ? 
-                    (<DarkModeOutlined sx={{color: '#fff'}} />) 
+                    (<DarkMode sx={{color: '#fff'}} />) 
                     : 
-                    (<LightModeOutlined sx={{color: '#fff'}} />)}
+                    (<LightMode sx={{color: '#D4DA52'}} />)}
                 </IconButton>
             </Grid>
         </Grid>
