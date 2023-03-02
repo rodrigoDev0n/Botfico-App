@@ -33,12 +33,6 @@ export const columns = [
         width: 110,
         editable: false,
     },
-    {
-        field: 'status',
-        headerName: 'Status',
-        width: 210,
-        editable: false,
-    }
 ];
 
 export const rows = [
@@ -49,7 +43,6 @@ export const rows = [
         date: '10/10/2020',
         duedate: '10/10/2020',
         balance: '$10.00',
-        status: 'Overdue 10 days(not sent)',
     },
     {
         id: 2,
@@ -58,7 +51,6 @@ export const rows = [
         date: '10/10/2020',
         duedate: '10/10/2020',
         balance: '$20.00',
-        status: 'Overdue 10 days(not sent)',
     },
     {
         id: 3,
@@ -67,7 +59,6 @@ export const rows = [
         date: '10/10/2020',
         duedate: '10/10/2020',
         balance: '$30.00',
-        status: 'Overdue 10 days(not sent)',
     },
     {
         id: 4,
@@ -76,7 +67,6 @@ export const rows = [
         date: '10/10/2020',
         duedate: '10/10/2020',
         balance: '$40.00',
-        status: 'Overdue 10 days(not sent)'
     },
     {
         id: 5,
@@ -85,7 +75,6 @@ export const rows = [
         date: '10/10/2020',
         duedate: '10/10/2020',
         balance: '$60.00',
-        status: 'Overdue 10 days(not sent)'
     },
     {
         id: 6,
@@ -94,7 +83,6 @@ export const rows = [
         date: '10/10/2020',
         duedate: '10/10/2020',
         balance: '$60.00',
-        status: 'Overdue 10 days(not sent)'
     },
     {
         id: 7,
@@ -103,7 +91,6 @@ export const rows = [
         date: '10/10/2020',
         duedate: '10/10/2020',
         balance: '$60.00',
-        status: 'Overdue 10 days(not sent)'
     },
     {
         id: 8,
@@ -112,7 +99,6 @@ export const rows = [
         date: '10/10/2020',
         duedate: '10/10/2020',
         balance: '$60.00',
-        status: 'Overdue 10 days(not sent)'
     },
     {
         id: 9,
@@ -121,6 +107,5 @@ export const rows = [
         date: '10/10/2020',
         duedate: '10/10/2020',
         balance: '$60.00',
-        status: 'Overdue 10 days(not sent)'
     },
 ];

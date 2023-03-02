@@ -1,6 +1,5 @@
 import { useTheme } from "@mui/material"
-import { Box, Grid, Typography } from "@mui/material"
-import { useEffect, useState } from "react"
+import { Box, Grid } from "@mui/material"
 import { useDarkMode } from "../../hooks/useDarkMode"
 import { tokens } from "../../theme/botficoAppTheme"
 import { BankAccount } from "../components/BankAccount"

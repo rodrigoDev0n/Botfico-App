@@ -26,7 +26,7 @@ export const DashBoardLayout = ({ children }) => {
   return (
     <ThemeCustomProvider>
       <Box sx={{ display: 'flex', backgroundColor: 'primary.main', color: 'textcolor.main' }}>
-        {/* <NavBar /> */}
+        <NavBar />
         <SirdeBar
           drawerWidth={drawerWidth}
           disableDarkMode={disableDarkMode}
@@ -38,7 +38,7 @@ export const DashBoardLayout = ({ children }) => {
         <Box
           component='main'
           sx={{
-            flexGrow: 1, p: 2, mt: 0,
+            flexGrow: 1, p: 2, mt: 5,
           }}
         >
           {children}

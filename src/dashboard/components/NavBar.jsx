@@ -1,31 +1,37 @@
-import { MenuOutlined } from "@mui/icons-material"
-import { AppBar, Grid, IconButton, Toolbar, Typography } from "@mui/material"
+import { useTheme } from "@mui/material"
+import { Grid } from "@mui/material"
+import { DarkModeButton } from "../../components/DarkModeButton"
+import { tokens } from "../../theme/botficoAppTheme"
 
 export const NavBar = ({drawerWidth}) => {
+
+  const theme = useTheme()
+  const colors = tokens(theme.palette.mode)
+
   return (
-    <AppBar
+    <Grid container
       position="fixed"
       sx={{
+        display: 'flex',
+        alignContent: 'space-between',
+        backgroundColor: colors.blue.default,
+        height: '45px',
         width: { sm: `calc(100% - ${ drawerWidth }px)` },
         ml: { sm: `${drawerWidth}` }
       }}
     >
-      <Toolbar>
-       <IconButton
-          color="inherit"
-          edge="start"
-          sx={{ mr: 2, display: { sm: 'none' } }}
-       >
-        <MenuOutlined />
-       </IconButton> 
-       <Grid
-          container
-          direction="row"
-          justifyContent="space-between"
-          alignItems="center"
-       >
-       </Grid>
-      </Toolbar>
-    </AppBar>
+      <Grid item
+        sx={{
+          padding: 2,
+          ml: '94%',
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'flex-end'
+        }}
+      >
+        <DarkModeButton />
+      </Grid>
+    </Grid>
   )
 }

@@ -18,7 +18,7 @@ export const DashboArdButtons = () => {
   return (
     <>
       <ListItem disablePadding sx={{ pl: 2, mt: 1 }}>
-        <Typography variant="p" sx={{ color: '#ffff', fontWeight: 'bolder' }}>
+        <Typography variant="p" sx={{ color: 'textcolor.main', fontWeight: 'bolder' }}>
           Items
         </Typography>
       </ListItem>
@@ -34,9 +34,10 @@ export const DashboArdButtons = () => {
                   backgroundColor: '#0c416b',
                 }
               }}>
-                <Icon className="custom-icon" sx={{ color: '#ffff' }}>{icon}</Icon>
+                <Icon className="custom-icon" sx={{ color: active ? '#fff' :'textcolor.main' }}>{icon}</Icon>
                 <ListItemText primary={name} sx={{
-                  color: '#fff',
+                  color: active ? '#fff'  :'textcolor.main',
+                  fontWeight: 'bold',
                   ml: 2,
                 }} />
               </ListItemButton>

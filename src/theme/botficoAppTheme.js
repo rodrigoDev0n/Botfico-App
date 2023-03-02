@@ -5,7 +5,7 @@ export const tokens = (mode) => ({
     ...(mode === 'dark'
         ? {
             blue: {
-                default: '#141a28' //'#0c416b',
+                default: '#141a28'
             },
             lightblue: {
                 default: '#0c416b',

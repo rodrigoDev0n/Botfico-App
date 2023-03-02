@@ -36,35 +36,12 @@ export const SirdeBar = ({
   disableDarkMode, 
   setDarkMode, 
   state, 
-  primary, 
-  textcolor 
 }) => {
-  /* const [state, dispatch] = useReducer(darkModeReducer, init) */
   const {logout} = useContext(AuthContext)
   const navigate = useNavigate()
 
   const theme = useTheme()
   const color = tokens(theme.palette.mode)
-
-/*   const setDarkMode = () => {
-    const action = {
-      type: '[Theme] Switch Theme',
-      payload: true,
-    }
-
-    dispatch(action)
-    console.log(state)
-  }
-
-  const disableDarkMode = () => {
-    const action = {
-      type: '[Theme] Light Theme',
-      payload: false,
-    }
-  
-    dispatch(action)
-    console.log(state)
-  } */
 
   const logOut = () => {
     logout()
@@ -96,25 +73,10 @@ export const SirdeBar = ({
           },
         }}
       >
-        <Toolbar>
-          <Grid
-            container
-            alignItems="center"
-            justifyContent="center"
-            direction="column"
-          >
-            <Avatar sx={{ bgcolor: deepOrange[500], mt: 3 }}>
-              RP
-            </Avatar>
-            <Typography sx={{ color: 'textcolor.main', fontWeight: 'bold', mt: 1 }}>
-              Rodrigo Poblete
-            </Typography>
-          </Grid>
-        </Toolbar>
-        <Divider sx={{ mt: 3 }} />
         <Grid
           item
           sx={{
+            mt:'15%',
             p: 2
           }}
         >
@@ -122,7 +84,7 @@ export const SirdeBar = ({
             item
             className="box-shadow"
             sx={{
-              backgroundColor: '#1e4f78',
+              backgroundColor: 'primary.main',//'#1e4f78',
               borderRadius: '20px'
             }}
           >
@@ -131,33 +93,6 @@ export const SirdeBar = ({
             </List>
           </Grid>
         </Grid>
-        <Divider />
-        <Grid container alignItems="center" justifyContent="center" sx={{ mt: 1, p: 2 }}>
-          <Grid item xs={12}>
-            <Grid item sx={{
-              display: 'flex',
-              justifyContent: 'center'
-            }}>
-              <DarkModeButton 
-                setDarkMode={setDarkMode} 
-                disableDarkMode={disableDarkMode} 
-                state={state} 
-              />
-            </Grid>
-            <Button
-              onClick={logOut}
-              variant="contained"
-              fullWidth
-              sx={{ backgroundColor: 'red', borderRadius: 5 }}
-            >
-              <LogoutOutlined />
-              <Typography sx={{ ml: 1 }}>
-                Cerrar sesión
-              </Typography>
-            </Button>
-          </Grid>
-        </Grid>
-
       </Drawer>
     </Box>
   )

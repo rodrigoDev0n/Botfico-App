@@ -1,8 +1,40 @@
-import { ArrowDropDown } from '@mui/icons-material'
+import { ArrowDropDown, MenuBookOutlined } from '@mui/icons-material'
 import { Button, Divider, Grid, Typography } from '@mui/material'
 import Box from '@mui/material/Box'
 import { DataGrid } from '@mui/x-data-grid'
 import { columns, rows } from '../helpers/exampleDataTable'
+
+const column = [
+  ...columns,
+  {
+    field: 'status',
+    headerName: 'Status',
+    width: '200',
+    sortable: false,
+    renderCell: (params) => {
+      return <Typography variant='p' sx={{
+        fontWeight: 'bold',
+        color: 'orange',
+        cursor: 'pointer'
+      }}>Overdue 10 days (not sent)</Typography>
+    }
+  },
+  {
+    field: 'action',
+    headerName: 'Action',
+    width: 200,
+    sortable: false,
+    renderCell: (params) => {
+      return <Button variant="outlined" sx={{
+        borderColor: '#1e4f78',
+        color: 'textcolor.main'
+      }}>
+        Receive payment
+        <ArrowDropDown />
+      </Button>;
+    },
+  },
+];
 
 export const VentasTableViewer = () => {
   return (
@@ -19,8 +51,8 @@ export const VentasTableViewer = () => {
           color: 'textcolor.main',
           borderColor: 'textcolor.main'
         }}>
-           Batch functions
-           <ArrowDropDown />
+          Batch functions
+          <ArrowDropDown />
         </Button>
         <Button variant='contained' sx={{
           backgroundColor: 'green',
@@ -32,7 +64,7 @@ export const VentasTableViewer = () => {
       <Divider />
       <DataGrid
         rows={rows}
-        columns={columns}
+        columns={column}
         pageSize={5}
         rowsPerPageOptions={[5]}
         checkboxSelection
