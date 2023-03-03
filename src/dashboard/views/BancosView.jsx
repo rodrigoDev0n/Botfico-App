@@ -25,7 +25,6 @@ export const BancosView = () => {
 
   return (
     <Box
-      className="animated_container"
       sx={{
         width: '100%',
         height: '95vh',
@@ -42,6 +41,7 @@ export const BancosView = () => {
       >
         <Grid
           item
+          className="animated_container"
           sx={{
             p: 1,
             width: '50%',
@@ -53,6 +53,7 @@ export const BancosView = () => {
         </Grid>
         <Grid
           item
+          className="animated_view_component"
           sx={{
             p: 1,
             width: '50%',
@@ -72,6 +73,7 @@ export const BancosView = () => {
       >
         <Grid
           item
+          className="animated_view_component-2"
           sx={{
             p: 1,
             width: '50%',
@@ -83,6 +85,7 @@ export const BancosView = () => {
         </Grid>
         <Grid
           item
+          className="animated_view_component-3"
           sx={{
             p: 1,
             width: '50%',

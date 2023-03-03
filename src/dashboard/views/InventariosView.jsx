@@ -51,7 +51,7 @@ export const InventariosView = () => {
           >
             <Grid
               item
-              className="container-custom animated_view_component"
+              className="container-custom animated_container"
               sx={{
                 p: 1,
                 display: 'flex',
@@ -82,7 +82,7 @@ export const InventariosView = () => {
                 height: '100%',
                 p: 1
               }}>
-              <Grid item className="animated_view" sx={{
+              <Grid item className="animated_view_component" sx={{
                 display: 'flex',
                 width: '100%',
                 height: '30%',
@@ -114,7 +114,7 @@ export const InventariosView = () => {
                 }}>
                   <Grid
                     item
-                    className="container-custom"
+                    className="container-custom animated_view_component-2"
                     sx={{
                       width: '100%',
                       height: '100%',
@@ -125,9 +125,9 @@ export const InventariosView = () => {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item className="container-custom animated_view animated_view_component-3" sx={{
+              <Grid item className="container-custom animated_view_component-3" sx={{
                 width: '100%',
-                height: '77%',
+                height: '70%',
                 borderRadius: '15px',
                 mt: 2
               }}>

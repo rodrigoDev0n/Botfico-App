@@ -82,7 +82,7 @@ export const ContabilidadView = () => {
                 height: '100%',
                 p: 1
               }}>
-              <Grid item className="animated_view" sx={{
+              <Grid item className="animated_container" sx={{
                 display: 'flex',
                 width: '100%',
                 height: '30%',
@@ -125,9 +125,9 @@ export const ContabilidadView = () => {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item className="container-custom animated_view animated_view_component-3" sx={{
+              <Grid item className="container-custom animated_view_component-2" sx={{
                 width: '100%',
-                height: '77%',
+                height: '70%',
                 borderRadius: '15px',
                 mt: 2
               }}>

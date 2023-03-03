@@ -24,7 +24,7 @@ const column = [
     headerName: 'Action',
     width: 200,
     sortable: false,
-    renderCell: (params) => {
+    renderCell: () => {
       return <Button variant="outlined" sx={{
         borderColor: '#1e4f78',
         color: 'textcolor.main'
@@ -38,7 +38,7 @@ const column = [
 
 export const VentasTableViewer = () => {
   return (
-    <Box sx={{ height: 400, width: '100%' }}>
+    <Box sx={{ height: '450px', width: '100%' }}>
       <Grid item sx={{
         p: 2,
         alignItems: 'center',
@@ -65,7 +65,7 @@ export const VentasTableViewer = () => {
       <DataGrid
         rows={rows}
         columns={column}
-        pageSize={5}
+        pageSize={6}
         rowsPerPageOptions={[5]}
         checkboxSelection
         disableSelectionOnClick
