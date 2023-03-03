@@ -59,7 +59,7 @@ export const DashboardView = ({texcolor, secondary}) => {
               height: '100%',
               p: 1
             }}>
-              <Grid item className="box-shadow animated_view_component" sx={{
+              <Grid item className="container-custom animated_view_component" sx={{
                 width: '100%',
                 height: '100%',
                 borderRadius: '15px', //cambiar color
@@ -73,7 +73,7 @@ export const DashboardView = ({texcolor, secondary}) => {
               height: '100%',
               p: 1
             }}>
-              <Grid item className="box-shadow animated_view_component-2" sx={{
+              <Grid item className="container-custom animated_view_component-2" sx={{
                 width: '100%',
                 height: '100%',
                 borderRadius: '15px',
@@ -97,7 +97,7 @@ export const DashboardView = ({texcolor, secondary}) => {
               height: '100%',
               p: 1
             }}>
-              <Grid item className="box-shadow animated_view_component-3" sx={{
+              <Grid item className="container-custom animated_view_component-3" sx={{
                 width: '100%',
                 height: '100%',
                 borderRadius: '15px',
@@ -111,7 +111,7 @@ export const DashboardView = ({texcolor, secondary}) => {
               height: '100%',
               p: 1
             }}>
-              <Grid item className="box-shadow animated_view_component-4" sx={{
+              <Grid item className="container-custom animated_view_component-4" sx={{
                 width: '100%',
                 height: '100%',
                 borderRadius: '15px',
@@ -132,11 +132,11 @@ export const DashboardView = ({texcolor, secondary}) => {
         width: {
           xs: '100%',
           sm: '35%'
-        },
+       },
         height: '100%',
         p: 1
       }}>
-        <Grid item className="box-shadow animated_view_component-5" sx={{
+        <Grid item className="container-custom animated_view_component-5" sx={{
           width: '100%',
           height: '100%',
           borderRadius: '15px',

@@ -10,15 +10,6 @@ import { SirdeBar } from "../components/SirdeBar"
 const drawerWidth = 270
 
 export const DashBoardLayout = ({ children }) => {
-  const {
-    disableDarkMode,
-    setDarkMode,
-    primary,
-    secondary,
-    textcolor,
-    state,
-    theme
-  } = useDarkMode()
 
   const colortheme = useTheme()
   const colors = tokens(colortheme.palette.mode)
@@ -27,14 +18,7 @@ export const DashBoardLayout = ({ children }) => {
     <ThemeCustomProvider>
       <Box sx={{ display: 'flex', backgroundColor: 'primary.main', color: 'textcolor.main' }}>
         <NavBar />
-        <SirdeBar
-          drawerWidth={drawerWidth}
-          disableDarkMode={disableDarkMode}
-          setDarkMode={setDarkMode}
-          state={state}
-          primary={primary}
-          textcolor={textcolor}
-        />
+        <SirdeBar drawerWidth={drawerWidth} />
         <Box
           component='main'
           sx={{

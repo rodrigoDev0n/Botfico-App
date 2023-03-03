@@ -13,8 +13,7 @@ import {
   Typography
 } from "@mui/material"
 
-import { deepOrange } from "@mui/material/colors"
-import { useContext, useReducer, useState } from "react"
+import { useContext, useState } from "react"
 import { Navigate, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../auth/context/AuthContext"
 import { DarkModeButton } from "../../components/DarkModeButton"
@@ -31,12 +30,7 @@ import { tokens } from "../../theme/botficoAppTheme"
     active: false,
   }
 } */
-export const SirdeBar = ({ 
-  drawerWidth = 240, 
-  disableDarkMode, 
-  setDarkMode, 
-  state, 
-}) => {
+export const SirdeBar = ({drawerWidth = 240}) => {
   const {logout} = useContext(AuthContext)
   const navigate = useNavigate()
 
@@ -82,9 +76,9 @@ export const SirdeBar = ({
         >
           <Grid
             item
-            className="box-shadow"
+            className="container-custom"
             sx={{
-              backgroundColor: 'primary.main',//'#1e4f78',
+              backgroundColor: '',//'#1e4f78',
               borderRadius: '20px'
             }}
           >

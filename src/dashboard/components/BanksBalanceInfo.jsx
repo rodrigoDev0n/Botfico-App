@@ -6,7 +6,7 @@ export const BanksBalanceInfo = ({name, button}) => {
     return (
         <Grid
             item
-            className="box-shadow"
+            className="container-custom"
             sx={{
                 borderRadius: '15px',
                 width: '100%',

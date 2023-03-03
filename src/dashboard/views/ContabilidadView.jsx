@@ -30,7 +30,7 @@ export const ContabilidadView = () => {
             sm: 'row'
           },
           width: '100%',
-          height: '95vh',
+          height: '100vh',
         }}>
         <Box
           sx={{
@@ -51,14 +51,14 @@ export const ContabilidadView = () => {
           >
             <Grid
               item
-              className="box-shadow animated_view_component"
+              className="container-custom animated_view_component"
               sx={{
                 p: 1,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 width: '100%',
-                height: '100px',
+                height: '100px', 
                 borderRadius: '15px'
               }}
             >
@@ -88,7 +88,7 @@ export const ContabilidadView = () => {
                 height: '30%',
                 borderRadius: '15px',
               }}>
-                <Grid item className="" sx={{
+                <Grid item className="container-custom" sx={{
                   pr: 1,
                   width: '50%',
                   height: '100%',
@@ -96,11 +96,11 @@ export const ContabilidadView = () => {
                 }}>
                   <Grid
                     item
-                    className="box-shadow"
+                    className=""
                     sx={{
                       width: '100%',
                       height: '100%',
-                      borderRadius: '15px'
+                      borderRadius: '15px',
                     }}
                   >
                     <VentasFirstContainer />
@@ -114,7 +114,7 @@ export const ContabilidadView = () => {
                 }}>
                   <Grid
                     item
-                    className="box-shadow"
+                    className="container-custom"
                     sx={{
                       width: '100%',
                       height: '100%',
@@ -125,9 +125,9 @@ export const ContabilidadView = () => {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item className="box-shadow animated_view animated_view_component-3" sx={{
+              <Grid item className="container-custom animated_view animated_view_component-3" sx={{
                 width: '100%',
-                height: '70%',
+                height: '77%',
                 borderRadius: '15px',
                 mt: 2
               }}>
