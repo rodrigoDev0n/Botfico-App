@@ -57,11 +57,4 @@ export const buttonIconTextData = [
     route: '/proveedores',
     active: false,
   },
-  {
-    id: 8,
-    name: 'Configuración',
-    icon: 'settings',
-    route: '/configuracion',
-    active: false,
-  }
 ]

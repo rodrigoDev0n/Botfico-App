@@ -1,8 +1,9 @@
 import * as React from 'react'
 import { useContext } from 'react'
-import { Grid, IconButton, useTheme } from '@mui/material'
+import { Avatar, Grid, IconButton, useTheme } from '@mui/material'
 import { ColorModeContext, tokens } from '../theme/botficoAppTheme'
 import { DarkMode, LightMode } from '@mui/icons-material'
+import ProfileUser from './ProfileUser'
 
 export const DarkModeButton = ({ setDarkMode, disableDarkMode, state }) => {
 
@@ -17,7 +18,7 @@ export const DarkModeButton = ({ setDarkMode, disableDarkMode, state }) => {
     }
 
     return (
-        <Grid item display='flex' justifyContent='center' alignItems='center' sx={{p: 2, width: '100%'}} >
+        <Grid item display='flex' justifyContent='space-evenly' alignItems='center' sx={{p: 2, width: '100%'}} >
             <Grid item className='box-shadow' display='flex' justifyContent='center' alignItems='center' sx={{
                 mr: 1,
                 borderRadius: '50%',
@@ -33,6 +34,11 @@ export const DarkModeButton = ({ setDarkMode, disableDarkMode, state }) => {
                     (<LightMode sx={{color: '#D4DA52'}} />)}
                 </IconButton>
             </Grid>
+
+            {/* <Avatar className='box-shadow' sx={{width: '30px', height: '30px'}}>
+                R
+            </Avatar> */}
+            <ProfileUser />
         </Grid>
     )
 }

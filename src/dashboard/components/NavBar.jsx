@@ -1,5 +1,5 @@
 import { useTheme } from "@mui/material"
-import { Grid } from "@mui/material"
+import { Grid, Avatar } from "@mui/material"
 import { DarkModeButton } from "../../components/DarkModeButton"
 import { tokens } from "../../theme/botficoAppTheme"
 
@@ -13,6 +13,7 @@ export const NavBar = ({drawerWidth}) => {
       position="fixed"
       sx={{
         display: 'flex',
+        alignItems: 'center',
         alignContent: 'space-between',
         backgroundColor: colors.blue.default,
         height: '45px',
@@ -23,14 +24,14 @@ export const NavBar = ({drawerWidth}) => {
       <Grid item
         sx={{
           padding: 2,
-          ml: '94%',
+          ml: '90%',
           height: '100%',
           width: '100%',
           display: 'flex',
-          justifyContent: 'flex-end'
         }}
       >
         <DarkModeButton />
+        {/* Adaptar foto de perfil a este componente */}
       </Grid>
     </Grid>
   )
