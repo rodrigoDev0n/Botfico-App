@@ -9,6 +9,8 @@ import { SirdeBar } from "../components/SirdeBar"
 
 const drawerWidth = 270
 
+//TODO: El contenedor principal debe abarcar toda la pantalla
+
 export const DashBoardLayout = ({ children }) => {
 
   const colortheme = useTheme()
