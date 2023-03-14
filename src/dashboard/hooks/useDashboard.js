@@ -6,11 +6,13 @@ export const useDashboard = () => {
   const [buttons] = useState(buttonIconTextData)
 
   const onActiveButton = (index) => {
+    localStorage.setItem('active', index)
     buttons.map(e => {
-        if (e.id !== index) {
+        if (e.id.toString() !== localStorage.getItem('active')){
             e.active = false
         } else {
             e.active = true
+            console.log(e.id)
         }
     })
   }

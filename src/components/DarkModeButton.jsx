@@ -1,20 +1,21 @@
 import * as React from 'react'
-import { useContext } from 'react'
-import { Avatar, Grid, IconButton, useTheme } from '@mui/material'
-import { ColorModeContext, tokens } from '../theme/botficoAppTheme'
+import { useContext, useState } from 'react'
+import { Grid, IconButton, useTheme } from '@mui/material'
+import { ColorModeContext } from '../theme/botficoAppTheme'
 import { DarkMode, LightMode } from '@mui/icons-material'
 import ProfileUser from './ProfileUser'
 
-export const DarkModeButton = ({ setDarkMode, disableDarkMode, state }) => {
+export const DarkModeButton = () => {
 
-    const switchControl = useTheme()
     const theme = useTheme()
-    const colors = tokens(theme.palette.mode)
     const colorMode = useContext(ColorModeContext)
+    const [selectedMode, setSelectedMode] = useState(localStorage.getItem('mode'))
 
     const enable = () => {
-        localStorage.setItem('mode', theme.palette.mode)
         colorMode.toggleColorMode()
+        localStorage.setItem('mode', theme.palette.mode === 'dark' ? 'light': 'dark')
+        setSelectedMode(localStorage.getItem('mode'))
+        console.log(selectedMode)
     }
 
     return (
@@ -34,10 +35,6 @@ export const DarkModeButton = ({ setDarkMode, disableDarkMode, state }) => {
                     (<LightMode sx={{color: '#D4DA52'}} />)}
                 </IconButton>
             </Grid>
-
-            {/* <Avatar className='box-shadow' sx={{width: '30px', height: '30px'}}>
-                R
-            </Avatar> */}
             <ProfileUser />
         </Grid>
     )
